@@ -3,7 +3,7 @@ using Domain.Entities;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace TuSolucion.Application.Services;
+namespace Application.Services;
 
 public class ProductoService : IProductoService
 {

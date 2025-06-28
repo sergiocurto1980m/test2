@@ -2,7 +2,7 @@
 using Application.Commands;
 using Infrastructure.Data;
 using Application.Interfaces;
-using TuSolucion.Application.Services;
+using Application.Services;
 
 namespace Application.Handlers.Producto;
 

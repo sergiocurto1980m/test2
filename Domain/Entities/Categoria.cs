@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entities;
-public class Categoria
+public class Categoria : AuditableEntity
 {
     public int Id { get; set; }
     public string Nombre { get; set; } = string.Empty;

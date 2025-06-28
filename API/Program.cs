@@ -1,9 +1,10 @@
 using Application.Behaviors;
 using Application.Interfaces;
+using Application.Services;
 using Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using TuSolucion.Application.Services;
+using Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +18,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // MediatR y Pipeline
 builder.Services.AddMediatR(cfg =>
-    cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
-builder.Services.AddScoped<IProductoService, ProductoService>();
+    cfg.RegisterServicesFromAssembly(typeof(ProductoService).Assembly));
+
+//builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
+
+
+builder.Services.AddApplicationServices();
+
 
 var app = builder.Build();
 
